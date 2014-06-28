@@ -1,0 +1,32 @@
+#!/bin/bash
+echo "{
+  \"device_name\": \"$BTSYNC_NAME\","
+
+echo '
+  "listening_port" : 3369,
+  "use_upnp" : false,
+  "storage_path" : "/var/cache/btsync/",
+  "pid_file" : "/var/run/btsync/btsync.pid",
+
+  "webui" :
+  {
+    "listen" : "127.0.0.1:8888",
+    "login" : "admin",
+    "password" : "password"
+  },
+  "shared_folders" : ['
+
+first=true
+for secret in  `env | grep BTSYNC_SECRET_ | sed 's/BTSYNC_SECRET_//' | sed 's/=.*$/ /'`; do
+  DIR="BTSYNC_SECRET_${secret}"
+  if ! $first; then
+    echo ","
+  fi
+  echo "{\"secret\": \"${secret}\", \"dir\": \"/mount/data/${!DIR}\"}"
+  first=false
+done
+
+echo '
+  ]
+}
+'

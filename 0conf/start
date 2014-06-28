@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -f /mount/config/btsync.conf ]; then
+  /opt/btsync/btsync --nodaemon --config /mount/config/btsync.conf
+else
+  /opt/btsync/build-conf > /mount/config/0conf.conf
+  /opt/btsync/btsync --nodaemon --config /mount/config/0conf.conf
+fi
+

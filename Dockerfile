@@ -11,12 +11,16 @@ RUN mkdir -p /opt/btsync
 RUN tar -zvvxf /tmp/btsync.tar.gz -C /opt/btsync
 RUN rm /tmp/btsync.tar.gz
 
+COPY 0conf/build /opt/btsync/build-conf
+COPY 0conf/start  /opt/btsync/start
+
 VOLUME ["/mount/data", "/mount/config"]
 EXPOSE 3369
 EXPOSE 3369/udp
 EXPOSE 8888
 
 USER btsync
-CMD ["--config", "/mount/config/btsync.conf"]
-ENTRYPOINT ["/opt/btsync/btsync", "--nodaemon"]
+ENV BTSYNC_NAME docker-btsync
+
+CMD ["/opt/btsync/start"]
 
