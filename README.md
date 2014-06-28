@@ -20,8 +20,8 @@ docker run -d \
 
 ## Resources
 ### Volumes
- - `/mount/config` Configuration files for BTSync
- - `/mount/data` Data transferred over BTSync
+ - `/mount/config` Configuration files for BTSync. UID 9001 only needs read.
+ - `/mount/data` Data transferred over BTSync. UID 9001 needs RW access.
 
 ### Ports
  - `3369` and `3369/udp` for synchronization
