@@ -6,9 +6,8 @@
    read and write both of these directories.
 
 Run `docker run -i -t grahamc/btsync --dump-sample-config` for a sample btsync
-configuration. Also see [the example config](./example.conf) which is known to
-work on this container. Place the configuration into your configuration
-directory.
+configuration. Also see `example.conf` which is known to work on this container.
+Place the configuration into your configuration directory.
 
 Run:
 ```shell
