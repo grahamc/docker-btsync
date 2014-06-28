@@ -14,7 +14,7 @@ Run BTSync as such:
 
 ```
 docker run -d \
-  -v /patch/to/data:/mount/data                  \
+  -v /path/to/data:/mount/data                  \
   -p 3369/udp -p 3369                            \
   -e BTSYNC_NAME='my-docker-server'              \
   -e BTSYNC_SECRET_<your_secret_here>=horse-pics \
@@ -27,7 +27,7 @@ Operational example:
 
 ```
 docker run -d \
-  -v /patch/to/data:/mount/data                  \
+  -v /path/to/data:/mount/data                  \
   -p 3369/udp -p 3369                            \
   -e BTSYNC_NAME='my-docker-server'              \
   -e BTSYNC_SECRET_B7CNMISMNG22Z6M4Y5B7NT6LP5HBWMRXV=horse-pics \
