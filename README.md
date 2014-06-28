@@ -26,6 +26,8 @@ docker run -d \
 Operational example:
 
 ```
+mkdir -p /path/to/data/horse-pics
+chown -R 9001 /path/to/data
 docker run -d \
   -v /path/to/data:/mount/data                  \
   -p 3369/udp -p 3369                            \
@@ -43,7 +45,8 @@ configuration. Also see `example.conf` which is known to work on this container.
 Place the configuration into your configuration directory as `btsync.conf`.
 
 Run:
-```shell
+
+```
 docker run -d \
   -v /path/to/config:/mount/config \
   -v /path/to/data:/mount/data     \
