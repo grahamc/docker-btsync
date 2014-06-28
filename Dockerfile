@@ -4,6 +4,8 @@ MAINTAINER graham@grahamc.com
 ADD http://download-lb.utorrent.com/endpoint/btsync/os/linux-x64/track/stable /tmp/btsync.tar.gz
 
 RUN adduser --system --disabled-password --disabled-login --uid 9001 btsync
+RUN mkdir /var/run/btsync/ /var/cache/btsync
+RUN chown btsync /var/run/btsync /var/cache/btsync
 
 RUN mkdir -p /opt/btsync
 RUN tar -zvvxf /tmp/btsync.tar.gz -C /opt/btsync

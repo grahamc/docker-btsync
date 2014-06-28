@@ -5,8 +5,10 @@
  - Have a configuration and data directory. Make sure the user id `9001` can
    read and write both of these directories.
 
-Run `docker run -i -t grahamc/btsync --dump-sample-config` for an example btsync
-configuration. Place the configuration into your configuration directory.
+Run `docker run -i -t grahamc/btsync --dump-sample-config` for a sample btsync
+configuration. Also see [the example config](./example.conf) which is known to
+work on this container. Place the configuration into your configuration
+directory.
 
 Run:
 ```shell
