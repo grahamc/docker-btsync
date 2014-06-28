@@ -14,7 +14,7 @@ RUN rm /tmp/btsync.tar.gz
 COPY 0conf/build /opt/btsync/build-conf
 COPY 0conf/start  /opt/btsync/start
 
-RUN mkdir /mount/data /mount/config
+RUN mkdir -p /mount/data /mount/config
 RUN chown btsync /mount/data /mount/config
 VOLUME ["/mount/data", "/mount/config"]
 EXPOSE 3369
