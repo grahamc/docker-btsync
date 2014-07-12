@@ -19,6 +19,8 @@ echo '
 first=true
 for secret in  `env | grep BTSYNC_SECRET_ | sed 's/BTSYNC_SECRET_//' | sed 's/=.*$/ /'`; do
   DIR="BTSYNC_SECRET_${secret}"
+  mkdir "/mount/data/${!DIR}"
+
   if ! $first; then
     echo ","
   fi
